@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CS:GO 2 - Nová generace e-sportových stříleček">
+  <meta name="keywords" content="Counter Strike, CS:GO 2, FPS, e-sport, střílečky, hry">
+  <meta name="author" content="Tým CS:GO 2">
+  <title>CS:GO 2 - Oficiální web</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Hlavní navigace -->
+  <header>
+    <div class="logo">
+      <h1>CS:GO 2</h1>
+      <p>Nová éra e-sportových stříleček</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Domů</a></li>
+        <li><a href="#gameplay">Herní Mechaniky</a></li>
+        <li><a href="#news">Novinky</a></li>
+        <li><a href="#community">Komunita</a></li>
+        <li><a href="#shop">Obchod</a></li>
+        <li><a href="#stats">Statistiky</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sekce Domů -->
+  <section id="home">
+    <div class="hero">
+      <h2>Zažij nový zážitek z boje!</h2>
+      <p>Nová verze legendární hry s pokročilými herními mechanikami, novými mapami a zbraněmi.</p>
+      <a href="#gameplay" class="btn">Zjistit víc</a>
+    </div>
+  </section>
+
+  <!-- Sekce Herní Mechaniky -->
+  <section id="gameplay">
+    <h2>Herní Mechaniky CS:GO 2</h2>
+    <div class="mechanic">
+      <h3>Pokročilý pohybový systém</h3>
+      <p>Nový systém pohybu, který umožňuje plynulý přechod mezi jednotlivými akcemi.</p>
+    </div>
+    <div class="mechanic">
+      <h3>Realistická balistika</h3>
+      <p>Úprava balistiky pro větší realismus a přesnost střelby.</p>
+    </div>
+    <div class="mechanic">
+      <h3>Nové zbraně a vybavení</h3>
+      <p>Nové zbraně a vybavení, které mění dynamiku hry a poskytují nové možnosti.</p>
+    </div>
+  </section>
+
+  <!-- Sekce Novinky -->
+  <section id="news">
+    <h2>Novinky a Aktualizace</h2>
+    <div class="news-item">
+      <h3>Nové mapy v CS:GO 2!</h3>
+      <p>Objevte nové mapy, které přinášejí nové taktiky a strategické možnosti.</p>
+    </div>
+    <div class="news-item">
+      <h3>Aktualizace zbraní</h3>
+      <p>Nové zbraně a vylepšené modely pro lepší herní zážitek.</p>
+    </div>
+    <div class="news-item">
+      <h3>Vylepšení matchmakingového systému</h3>
+      <p>Systém je nyní vyváženější a umožňuje hráčům najít zápasy podle jejich skutečné úrovně.</p>
+    </div>
+  </section>
+
+  <!-- Sekce Komunita -->
+  <section id="community">
+    <h2>Komunita CS:GO 2</h2>
+    <p>Připojte se k naší komunitě a sdílejte tipy a strategie s ostatními hráči.</p>
+    <a href="forum.html" class="btn">Připojte se k fóru</a>
+  </section>
+
+  <!-- Sekce Obchod -->
+  <section id="shop">
+    <h2>Obchod s herními předměty</h2>
+    <p>Navštivte náš obchod, kde si můžete koupit nové skiny, zbraně a vybavení.</p>
+    <a href="shop.html" class="btn">Prozkoumat obchod</a>
+  </section>
+
+  <!-- Sekce Statistiky -->
+  <section id="stats">
+    <h2>Statistiky hráčů</h2>
+    <p>Prozkoumejte statistiky hráčů, žebříčky a nejlepší hráče CS:GO 2.</p>
+    <div id="leaderboard">
+      <h3>Žebříček hráčů</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Hráč</th>
+            <th>Úroveň</th>
+            <th>Počet vítězství</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamicky naplňováno JavaScript kódem -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Sekce Kontakt -->
+  <section id="contact">
+    <h2>Kontaktujte nás</h2>
+    <p>Máte nějaké dotazy nebo problémy? Kontaktujte nás prostřednictvím e-mailu: <a href="mailto:podpora@csgo2.com">podpora@csgo2.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CS:GO 2. Všechna práva vyhrazena.</p>
+  </footer>
+</body>
+</html>
