@@ -1,0 +1,28 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Dynamické naplňování leaderboardu
+    const leaderboard = [
+      { name: "Hráč 1", level: 50, wins: 200 },
+      { name: "Hráč 2", level: 45, wins: 180 },
+      { name: "Hráč 3", level: 40, wins: 150 },
+    ];
+  
+    const tableBody = document.querySelector("#leaderboard tbody");
+    leaderboard.forEach(player => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${player.name}</td>
+        <td>${player.level}</td>
+        <td>${player.wins}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  
+    // Příklad pro aktivaci tlačítka na scrollování
+    const btn = document.querySelector(".btn");
+    btn.addEventListener("click", function () {
+      window.scrollTo({
+        top: document.querySelector("#gameplay").offsetTop,
+        behavior: "smooth"
+      });
+    });
+  });
