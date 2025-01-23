@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Kurzy</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <!-- Hlavní strana -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">HTML & CSS Kurzy</div>
+            <ul class="nav-links">
+                <li><a href="#about">O kurzu</a></li>
+                <li><a href="#courses">Kurzy</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="register.html" class="btn-register">Registrace</a></li>
+            </ul>
+        </nav>
+        <div class="hero-section">
+            <h1>Staňte se expertem v HTML & CSS</h1>
+            <p>Jednoduché a efektivní kurzy pro začátečníky i pokročilé.</p>
+            <a href="#courses" class="btn-main">Začít kurz</a>
+        </div>
+    </header>
+
+    <!-- O kurzu -->
+    <section id="about" class="about-section">
+        <h2>Proč naše kurzy?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Interaktivní</h3>
+                <p>Cvičte přímo v prohlížeči s naším vestavěným editorem.</p>
+            </div>
+            <div class="feature">
+                <h3>Praktické</h3>
+                <p>Každá lekce obsahuje reálné projekty.</p>
+            </div>
+            <div class="feature">
+                <h3>Flexibilní</h3>
+                <p>Učte se vlastním tempem kdykoli a odkudkoli.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kurzy -->
+    <section id="courses" class="courses-section">
+        <h2>Naše kurzy</h2>
+        <div class="course-list">
+            <div class="course">
+                <h3>HTML Základy</h3>
+                <p>Naučte se strukturu webových stránek a základní značky.</p>
+                <a href="course-html-basics.html" class="btn-course">Více</a>
+            </div>
+            <div class="course">
+                <h3>CSS Základy</h3>
+                <p>Zvládněte stylování a vytvořte atraktivní stránky.</p>
+                <a href="course-css-basics.html" class="btn-course">Více</a>
+            </div>
+            <div class="course">
+                <h3>Responzivní Design</h3>
+                <p>Naučte se techniky pro mobilní zařízení a moderní layouty.</p>
+                <a href="course-responsive-design.html" class="btn-course">Více</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact-section">
+        <h2>Kontaktujte nás</h2>
+        <form action="submit-contact.php" method="post">
+            <label for="name">Jméno:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Zpráva:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn-submit">Odeslat</button>
+        </form>
+    </section>
+</body>
+</html>
