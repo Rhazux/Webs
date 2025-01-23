@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrace</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1>HTML & CSS Kurzy</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="1.html">Domů</a></li>
+                <li><a href="register.html" class="btn-register">Registrace</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <h2>Vytvoření účtu</h2>
+            <form id="registerForm">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Heslo:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+                <button type="submit">Registrovat</button>
+            </form>
+            <div id="registerMessage"></div>
+        </section>
+    </main>
+
+    <script src="register.js"></script>
+</body>
+</html>
