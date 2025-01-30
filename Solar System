@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulace Solárního Systému</title>
+    <style>
+        /* Základní nastavení */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Pozadí s hvězdami */
+        .space {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #000 0%, #000 50%, #111 100%);
+        }
+
+        /* Hvězdy v pozadí */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #fff;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Slunce */
+        .sun {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #ffcc00;
+            animation: pulse 3s infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        /* Planety */
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.5) 50%, rgba(255,255,255,0.5) 50%);
+            transform-origin: center;
+        }
+
+        /* Měsíc */
+        .moon {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.5) 50%, rgba(255,255,255,0.5) 50%);
+        }
+
+        /* První planeta */
+        .planet1 {
+            width: 40px;
+            height: 40px;
+            background-color: #4CAF50;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbit1 20s linear infinite;
+        }
+
+        @keyframes orbit1 {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(360deg); }
+        }
+
+        /* Druhá planeta */
+        .planet2 {
+            width: 30px;
+            height: 30px;
+            background-color: #2196F3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbit2 30s linear infinite;
+        }
+
+        @keyframes orbit2 {
+            0% { transform: rotate(0deg) translateX(250px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(250px) rotate(360deg); }
+        }
+
+        /* Měsíc obíhající první planetu */
+        .moon1 {
+            width: 10px;
+            height: 10px;
+            background-color: #9E9E9E;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbitMoon 5s linear infinite;
+        }
+
+        @keyframes orbitMoon {
+            0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(30px) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="space">
+        <!-- Slunce -->
+        <div class="sun"></div>
+
+        <!-- První planeta s měsícem -->
+        <div class="planet planet1">
+            <div class="moon moon1"></div>
+        </div>
+
+        <!-- Druhá planeta -->
+        <div class="planet planet2"></div>
+
+        <!-- Hvězdy v pozadí -->
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 30%; left: 80%;"></div>
+        <div class="star" style="top: 70%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 10%;"></div>
+        <div class="star" style="top: 90%; left: 70%;"></div>
+        <div class="star" style="top: 30%; left: 30%;"></div>
+    </div>
+</body>
+</html>
