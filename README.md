@@ -15,3 +15,7 @@ Simulace Solárního Systému
 
 **2. Detail planety s měsícem**
 ![Screenshot 2025-01-30 083148](https://github.com/user-attachments/assets/59e8a304-9b7a-48bf-b93e-104150341227)
+
+
+**Autor**: Daniel Verner
+**Date**: 01/30/2025
