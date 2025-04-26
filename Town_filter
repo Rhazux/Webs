@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukázka filtrování dat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: #f5f5f5;
+      line-height: 1.6;
+      padding: 40px;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+    nav a {
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #2c2c54;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: #575fcf;
+      transform: scale(1.05);
+    }
+
+    section {
+      margin: 40px 0;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffc048;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px 18px;
+      text-align: left;
+    }
+    th {
+      background-color: #2c3e50;
+    }
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .filter-input {
+      width: 100%;
+      padding: 5px 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"], select {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px;
+      background: #ff5e57;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff3f34;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ukázka filtrování dat</h1>
+    <nav>
+      <a href="#tabulka">Tabulka</a>
+      <a href="#formular">Formulář</a>
+    </nav>
+  </header>
+
+  <section id="tabulka">
+    <h2>📊 Tabulka měst</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>
+            Město<br>
+            <input class="filter-input" type="text" id="filterCity" placeholder="Filtrovat města">
+          </th>
+          <th>Počet obyvatel</th>
+        </tr>
+      </thead>
+      <tbody id="cityTable">
+        <tr><td>1</td><td>Praha</td><td>1300000</td></tr>
+        <tr><td>2</td><td>Brno</td><td>380000</td></tr>
+        <tr><td>3</td><td>Ostrava</td><td>290000</td></tr>
+        <tr><td>4</td><td>Plzeň</td><td>170000</td></tr>
+        <tr><td>5</td><td>Liberec</td><td>105000</td></tr>
+        <tr><td>6</td><td>Olomouc</td><td>100000</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="formular">
+    <h2>📝 Formulář</h2>
+    <form id="cityForm">
+      <input type="text" id="filterSelect" placeholder="Filtrovat města ve výběru">
+      <select id="citySelect">
+        <option>Praha</option>
+        <option>Brno</option>
+        <option>Ostrava</option>
+        <option>Plzeň</option>
+        <option>Liberec</option>
+        <option>Olomouc</option>
+      </select>
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
+
+  <script>
+    const filterCityInput = document.getElementById('filterCity');
+    filterCityInput.addEventListener('keyup', () => {
+      const filter = filterCityInput.value.toLowerCase();
+      const rows = document.querySelectorAll('#cityTable tr');
+      rows.forEach(row => {
+        const city = row.children[1].textContent.toLowerCase();
+        row.style.display = city.includes(filter) ? '' : 'none';
+      });
+    });
+
+    const selectFilter = document.getElementById('filterSelect');
+    const select = document.getElementById('citySelect');
+    const originalOptions = Array.from(select.options);
+    selectFilter.addEventListener('input', () => {
+      const filter = selectFilter.value.toLowerCase();
+      select.innerHTML = '';
+      originalOptions.forEach(opt => {
+        if (opt.text.toLowerCase().includes(filter)) {
+          select.appendChild(opt);
+        }
+      });
+      if (!filter) {
+        originalOptions.forEach(opt => select.appendChild(opt));
+      }
+    });
+
+    document.getElementById('cityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert(`Vybrané město: ${select.value}`);
+    });
+  </script>
+</body>
+</html>
